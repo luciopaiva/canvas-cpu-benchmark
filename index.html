@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas CPU benchmark</title>
+
+    <style>
+        :root {
+            --width: 500px;
+            --height: 500px;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #ccc;
+            font-family: monospace;
+            overflow: hidden;
+        }
+        .container {
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 50px auto;
+            width: calc(2 * var(--width));
+        }
+        .title {
+            grid-column: span 2;
+            font-size: 32px;
+        }
+        #metrics {
+            padding-left: 25px;
+        }
+        #metrics table {
+            min-width: 350px;
+        }
+        #metrics table td:nth-child(2) {
+            text-align: right;
+        }
+        #metrics table span {
+            color: white;
+        }
+    </style>
+
+    <script src="index.js" type="module" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="title">Canvas CPU benchmark</div>
+    <canvas id="canvas"></canvas>
+    <div id="metrics">
+        <table>
+            <tr>
+                <td>FPS</td>
+                <td><span id="fps"></span></td>
+            </tr>
+            <tr>
+                <td>Time per pixel</td>
+                <td><span id="time-per-pixel"></span> ns</td>
+            </tr>
+            <tr>
+                <td>Accumulated avg. time per pixel</td>
+                <td><span id="avg-time-per-pixel"></span> ns</td>
+            </tr>
+            <tr>
+                <td>Estimated full HD render time</td>
+                <td><span id="full-hd-time"></span> ms</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script src="index.js" nomodule defer></script>
+
+</body>
+</html>
