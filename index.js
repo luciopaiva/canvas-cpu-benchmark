@@ -34,6 +34,10 @@ let accumulatedTimePerPixelSum = 0;
 let accumulatedTimePerPixelCount = 0;
 
 function reportMetrics() {
+    if (elapsedCount === 0) {
+        return;  // browser tab was probably hidden, no refresh callbacks fired
+    }
+
     const elapsed = elapsedSum / elapsedCount;
     const elapsedPerPixelInNanos = 1000000 * elapsed / canvasSizeInPixels;
 
