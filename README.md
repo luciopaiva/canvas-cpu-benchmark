@@ -48,7 +48,7 @@ Each test ran for 2 minutes. Results:
 - Uint8ClampedArray: 7.4ns per pixel
 - Uint32Array: 4.7ns per pixel
 
-So the speedup was of 1.57 times.
+So the speedup was of 1.57.
 
 But time per pixel curiously decreases when the canvas gets bigger:
 
@@ -56,4 +56,4 @@ But time per pixel curiously decreases when the canvas gets bigger:
 - Uint8ClampedArray: 4.5ns per pixel
 - Uint32Array: 2.9ns per pixel
 
-Speedup still similar, though, 1.55 times.
+Speedup still similar, though: 1.55.
